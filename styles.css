@@ -1580,7 +1580,27 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         padding: 15px 20px;
     }
 
-    /* 3. УБИРАЕМ ФОН НА СТРАНИЦЕ WORKS */
+    /* 3. НА INDEX ОСТАВЛЯЕМ НАВИГАЦИЮ И ФОН */
+    body:not(.works-page):not(.about-page):not(.blog-page) .nav {
+        display: block !important;
+        position: fixed !important;
+        left: 20px !important;
+        top: 180px !important;
+    }
+
+    body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner {
+        display: block !important;
+    }
+
+    body:not(.works-page):not(.about-page):not(.blog-page) .mobile-menu-btn {
+        display: none !important;
+    }
+
+    body:not(.works-page):not(.about-page):not(.blog-page) .mobile-nav {
+        display: none !important;
+    }
+
+    /* 4. УБИРАЕМ ФОН НА СТРАНИЦЕ WORKS */
     .works-page .bg-banner {
         display: none !important;
     }
@@ -1606,6 +1626,14 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         margin: 0 20px 0 0;
     }
 
+    /* Заголовок больше и интервал */
+    .about-title {
+        font-size: 48px !important;
+        letter-spacing: -2px !important;
+        margin-bottom: 20px !important;
+        text-align: left;
+    }
+
     /* Центрирование по левому краю */
     .about-intro {
         flex-direction: column;
@@ -1624,8 +1652,19 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         display: flex;
         gap: 10px;
     }
+}
 
-    .about-title {
-        text-align: left;
+/* ===== WORKS MOBILE LAYOUT ===== */
+@media (max-width: 768px) {
+    .works-content {
+        padding: 0 10px !important;
+    }
+
+    .works-content-inner {
+        padding: 20px 0 !important;
+    }
+
+    .works-title {
+        font-size: 36px !important;
     }
 }
