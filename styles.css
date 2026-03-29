@@ -1590,6 +1590,14 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
     body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner {
         display: block !important;
+        right: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+    body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner img {
+        opacity: 0.3 !important;
+        filter: grayscale(100%) brightness(0.8) !important;
     }
 
     body:not(.works-page):not(.about-page):not(.blog-page) .mobile-menu-btn {
@@ -1616,7 +1624,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     .about-page .page-header {
         display: flex;
         align-items: center;
-        padding-top: 80px;
+        padding-top: 20px;
         margin-bottom: 20px;
     }
 
@@ -1628,9 +1636,9 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
     /* Заголовок больше и интервал */
     .about-title {
-        font-size: 48px !important;
-        letter-spacing: -2px !important;
-        margin-bottom: 20px !important;
+        font-size: 64px !important;
+        letter-spacing: -3px !important;
+        margin-bottom: 30px !important;
         text-align: left;
     }
 
@@ -1652,6 +1660,25 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         display: flex;
         gap: 10px;
     }
+
+    /* Секции Путь и Контакты */
+    .about-section h3 {
+        font-size: 32px !important;
+        letter-spacing: -1px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .about-section {
+        margin-bottom: 40px !important;
+    }
+
+    .timeline-text {
+        font-size: 16px !important;
+    }
+
+    .contact-link {
+        font-size: 18px !important;
+    }
 }
 
 /* ===== WORKS MOBILE LAYOUT ===== */
@@ -1665,6 +1692,43 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     }
 
     .works-title {
-        font-size: 36px !important;
+        font-size: 64px !important;
+        letter-spacing: -3px !important;
+    }
+
+    /* Работы побольше */
+    .grid .work-item {
+        min-width: calc(50% - 10px) !important;
+    }
+
+    .gallery-track .work-item {
+        min-width: calc(50% - 7.5px) !important;
+    }
+
+    /* Lightbox стрелки белые */
+    .lightbox-nav {
+        display: none !important;
+    }
+
+    .lightbox-close {
+        color: #000 !important;
+        font-size: 40px !important;
+        position: fixed !important;
+        top: 60px !important;
+        right: 20px !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        z-index: 1001 !important;
+    }
+
+    .lightbox-caption {
+        background: rgba(255, 255, 255, 0.9) !important;
+        color: #000 !important;
+    }
+
+    .lightbox-year,
+    .lightbox-exam {
+        color: #000 !important;
     }
 }

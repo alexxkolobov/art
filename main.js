@@ -226,6 +226,39 @@ document.addEventListener("DOMContentLoaded", function () {
         showNextImage();
       }
     });
+
+    // Свайпы для мобильных
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener(
+      "touchstart",
+      function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+      },
+      false,
+    );
+
+    lightbox.addEventListener(
+      "touchend",
+      function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      },
+      false,
+    );
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchStartX - touchEndX > swipeThreshold) {
+        // Свайп влево - следующее изображение
+        showNextImage();
+      }
+      if (touchEndX - touchStartX > swipeThreshold) {
+        // Свайп вправо - предыдущее изображение
+        showPrevImage();
+      }
+    }
   }
 
   // Аккордеон для работ
