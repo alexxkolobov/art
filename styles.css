@@ -1,0 +1,1445 @@
+@font-face {
+    font-family: "Thaloria";
+    src: url("Thaloria_Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Druzhok";
+    src: url("DRUZHOK.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Doppelganger";
+    src: url("Doppelganger_RUS.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nyght Serif";
+    src: url("NyghtSerif-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nyght Serif";
+    src: url("NyghtSerif-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Evolventa";
+    src: url("Evolventa-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Evolventa";
+    src: url("Evolventa-Oblique.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+:root {
+    --bg: #ffffff;
+    --text: #111111;
+    --muted: #888888;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+html * {
+    cursor:
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M1 1 L23 23 M23 1 L1 23" stroke="black" stroke-width="1.5" fill="none"/></svg>')
+            12 12,
+        auto !important;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica", "Arial", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ===== BACKGROUND BANNER ===== */
+.bg-banner {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55vw;
+    height: 80vh;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.bg-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) contrast(110%) brightness(0.9);
+    opacity: 0.75;
+}
+
+/* размытие для фона на странице работ */
+.works-page .bg-banner {
+    z-index: -3;
+    overflow: visible;
+}
+
+.works-page .bg-banner img {
+    filter: grayscale(100%) contrast(110%) brightness(0.9) blur(5px);
+    opacity: 0.6;
+    transform: scale(1.05);
+}
+
+/* чтобы контент был выше фона */
+body {
+    background: #fff;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== LOGO ===== */
+.logo {
+    position: fixed;
+    top: 40px;
+    left: 200px;
+    font-family: "Thaloria", sans-serif !important;
+    font-size: 40px;
+    font-weight: 400;
+    opacity: 0.5;
+    transition: transform 0.1s ease-out;
+}
+
+/* ===== SIDE NAV ===== */
+.side-nav {
+    position: fixed;
+    top: 120px;
+    left: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    z-index: 10;
+    transition: transform 0.1s ease-out;
+}
+
+.side-nav-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.side-nav-label {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+.side-nav-link {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.side-nav-link:hover {
+    opacity: 0.6;
+}
+
+/* стиль для ссылки "последняя работа" */
+.latest-link {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+/* скрываем side-nav на всех страницах кроме works, about, blog */
+body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
+    display: none;
+}
+
+/* ===== NAV (HOME PAGE) ===== */
+.nav-container {
+    font-family: "Thaloria", sans-serif !important;
+}
+
+.nav {
+    position: fixed;
+    left: 200px;
+    top: 250px;
+    width: 600px;
+    height: 132px;
+    transition: transform 0.1s ease-out;
+}
+
+.nav a {
+    display: block;
+    font-family: "Thaloria", sans-serif !important;
+    font-size: 160px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -5px;
+    color: #221f2e;
+    text-transform: none;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 0px;
+    transition:
+        transform 0.3s cubic-bezier(0.42, 0, 0.58, 1),
+        opacity 0.3s;
+}
+
+.nav a:hover {
+    transform: translateX(30px);
+    opacity: 0.7;
+}
+
+.nav a:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* ===== MOBILE NAV ===== */
+.mobile-menu-btn {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 99;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav a {
+    font-family: "Inter", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ===== BACK LINK ===== */
+.back {
+    position: absolute;
+    left: -55px;
+    top: 8px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.back:hover {
+    opacity: 1;
+}
+
+.back::before {
+    content: "←";
+    font-size: 32px;
+    color: var(--text);
+}
+
+/* центрирование стрелки на странице работ */
+.works .page-header {
+    display: flex;
+    align-items: center;
+}
+
+.works .page-header .back {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: 0 20px 0 0;
+}
+
+/* ===== PAGE LAYOUT ===== */
+.page {
+    max-width: 680px;
+    margin: 120px auto;
+}
+
+.works-page .page {
+    position: relative;
+    margin: 0;
+    max-width: none;
+}
+
+.works-content {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    padding: 0 60px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.works-content-inner {
+    padding: 40px 0;
+    width: 100%;
+}
+
+.works-content > :first-child {
+    margin-top: 0;
+}
+
+.works-content > :last-child {
+    margin-bottom: 0;
+}
+
+.page-header {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.page h2 {
+    font-family: "Thaloria", sans-serif !important;
+    font-size: 160px;
+    font-weight: 400;
+    text-transform: none;
+    margin: 0;
+}
+
+.page p {
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+}
+
+/* ===== WORKS FILTER ===== */
+.works-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-family: inherit;
+    background: transparent;
+    border: 1px solid var(--text);
+    color: var(--text);
+    cursor: pointer;
+    transition:
+        background 0.2s,
+        color 0.2s;
+}
+
+.filter-btn:hover {
+    background: var(--text);
+    color: var(--bg);
+}
+
+.filter-btn.active {
+    background: var(--text);
+    color: var(--bg);
+}
+
+.works-section.hidden {
+    display: none;
+}
+
+/* ===== WORKS ACCORDION ===== */
+.works-accordion {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--text);
+    transition: color 0.2s;
+    position: relative;
+    z-index: 10;
+}
+
+.accordion-header:hover {
+    color: var(--muted);
+}
+
+.accordion-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.accordion-title {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.accordion-count {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.accordion-icon {
+    font-size: 14px;
+    transition: transform 0.3s;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.accordion-content .course-intro,
+.accordion-content .works-section {
+    padding-left: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.accordion-content .gallery {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.accordion-content .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.accordion-content .work-item {
+    display: block;
+}
+
+.accordion-content .work-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 5000px;
+    padding: 0 0 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.accordion-item.active .accordion-content .course-intro,
+.accordion-item.active .accordion-content .works-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.accordion-item.active .accordion-content .fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.accordion-item.active .accordion-content .gallery-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.accordion-item.active .accordion-content .gallery-track {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 15px;
+}
+
+.accordion-item.active .accordion-content .gallery-track .work-item {
+    min-width: calc(50% - 7.5px);
+    position: relative;
+    overflow: hidden;
+}
+
+.accordion-content .work-item {
+    display: block;
+}
+
+.accordion-content .work-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 5000px;
+    padding: 0 0 20px;
+}
+
+.accordion-item.active .accordion-content .course-intro,
+.accordion-item.active .accordion-content .works-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.empty-message {
+    padding: 40px 0;
+    color: var(--muted);
+    text-align: center;
+}
+
+.works-section {
+    margin-top: 30px;
+}
+
+.works-section:first-child {
+    margin-top: 0;
+}
+
+.works-section h4 {
+    font-family: "Thaloria", sans-serif !important;
+    font-size: 32px;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 15px;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+.page h3 {
+    font-family: "Thaloria", sans-serif !important;
+    font-size: 32px;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.page p {
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    margin-bottom: 16px;
+}
+
+/* ===== ABOUT PAGE ===== */
+.about-title {
+    font-family: "Thaloria", sans-serif !important;
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -4px;
+    margin: 0 0 40px 0;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s;
+}
+
+.about-title:hover {
+    transform: translateX(20px);
+    opacity: 0.7;
+}
+
+.about-intro {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 100px;
+}
+
+.about-text {
+    max-width: 420px;
+}
+
+.profile-photo {
+    width: 260px;
+    height: 260px;
+    flex-shrink: 0;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.about-name {
+    font-size: 32px;
+    font-family: "Inter", sans-serif;
+    margin-bottom: 10px;
+}
+
+.about-lead {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-meta {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.about-enrollment {
+    font-size: 14px;
+    color: #777;
+    font-style: italic;
+}
+
+.about-section {
+    margin-bottom: 30px;
+    clear: both;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+}
+
+.timeline-year {
+    font-size: 14px;
+    color: var(--muted);
+    min-width: 120px;
+}
+
+.timeline-text {
+    font-size: 18px;
+}
+
+.contact {
+    margin-bottom: 8px;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.contact-link:hover {
+    border-bottom-color: var(--text);
+}
+
+.tg-icon {
+    flex-shrink: 0;
+}
+
+/* ===== BLOG REDESIGN ===== */
+
+/* Заголовок */
+.blog-title {
+    font-family: "Thaloria", sans-serif !important;
+    font-size: 120px;
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -4px;
+    margin: 0 0 60px 0;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s;
+}
+
+.blog-title:hover {
+    transform: translateX(20px);
+    opacity: 0.7;
+}
+
+.blog .page {
+    max-width: 700px;
+}
+
+.blog-list {
+    margin-top: 60px;
+    position: relative;
+}
+
+/* линия таймлайна */
+.blog-list::before {
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, #ddd, transparent);
+}
+
+/* пост */
+.post {
+    margin-bottom: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+/* задержка анимации */
+.post:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.post:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.post:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.post:hover {
+    transform: translateX(20px);
+    opacity: 0.6;
+}
+
+.post::before {
+    display: none;
+}
+
+.post + .post {
+    border-top: 1px solid #eee;
+    padding-top: 60px;
+}
+
+/* дата */
+.post-meta {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+/* заголовок поста */
+.post-title {
+    font-family: "Thaloria", sans-serif !important;
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* текст */
+.post-content p {
+    font-size: 18px;
+    color: #444;
+    max-width: 500px;
+}
+
+/* ===== ОТКРЫТЫЙ ПОСТ ===== */
+.post-view {
+    background: #fff;
+}
+
+.post-view-inner {
+    max-width: 640px;
+}
+
+.post-view .post-title {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.post-view .post-content p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* анимация */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post-view {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 1000;
+    display: none;
+    overflow-y: auto;
+}
+
+.post-view.active {
+    display: block;
+}
+
+.post-view.active .back {
+    display: none;
+}
+
+/* назад */
+.post-back {
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.post-back:hover {
+    opacity: 1;
+}
+
+.post-back::before {
+    content: "←";
+    font-size: 32px;
+    color: var(--text);
+}
+
+/* ===== GALLERY (WORKS) ===== */
+.gallery {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.works-section h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+/* ===== WORKS HERO ===== */
+.works-hero {
+    margin-bottom: 80px;
+}
+
+.works-subtitle {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.works-title {
+    font-family: "Thaloria", sans-serif !important;
+    font-size: 64px;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.works-desc {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 500px;
+    color: #444;
+}
+
+/* ===== FEATURED WORK ===== */
+.latest-work {
+    margin-bottom: 60px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.latest-label {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.latest-work img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.latest-info {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    justify-content: space-between;
+}
+
+.latest-info #latest-work-year {
+    font-weight: 500;
+    color: var(--text);
+}
+
+/* ===== COURSE INTRO ===== */
+.course-intro {
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.course-intro p {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #777;
+}
+
+/* ===== WORKS CAROUSEL ===== */
+.works-carousel {
+    margin-top: 40px;
+}
+
+.carousel-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+.carousel-tab {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.carousel-tab:hover {
+    color: var(--text);
+}
+
+.carousel-tab.active {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.carousel-content {
+    position: relative;
+}
+
+.carousel-panel {
+    display: none;
+    opacity: 0;
+    transform: translateX(20px);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.carousel-panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===== GALLERY NAVIGATION ===== */
+.gallery-carousel {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.gallery-track {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 15px;
+}
+
+.gallery-track .work-item {
+    min-width: calc(50% - 7.5px);
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-track .work-item img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.gallery-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: #e0e0e0;
+    cursor: pointer;
+    transition: background 0.2s;
+    padding: 0;
+}
+
+.gallery-dot:hover {
+    background: #bbb;
+}
+
+.gallery-dot.active {
+    background: var(--text);
+}
+
+/* ===== WORKS ACCORDION ===== */
+.works-accordion {
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.grid.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.work-item:nth-child(3n) {
+    grid-column: span 2;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    cursor: pointer;
+    display: block;
+}
+
+.work-item:hover img {
+    transform: none;
+}
+
+.work-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: white;
+    opacity: 0;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.work-caption .work-title {
+    font-weight: 500;
+    flex: 1;
+}
+
+.work-caption .work-year {
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.work-caption .work-exam {
+    display: none;
+}
+
+.accordion-content .work-caption .work-exam {
+    display: none;
+}
+
+.work-item:hover .work-caption {
+    opacity: 1;
+}
+
+.work-year {
+    font-weight: 500;
+    color: white;
+}
+
+.work-info {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: var(--text);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: var(--text);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    z-index: 10;
+}
+
+.lightbox-nav:hover {
+    opacity: 1;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-nav.hidden {
+    display: none;
+}
+
+.lightbox-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    max-width: 90vw;
+    margin-top: 15px;
+}
+
+.lightbox-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    text-align: left;
+}
+
+.lightbox-year {
+    font-size: 16px;
+    font-weight: 500;
+    color: #111;
+    font-family: "Inter", sans-serif;
+    line-height: 1.4;
+}
+
+.lightbox-semester {
+    font-size: 13px;
+    color: var(--muted);
+    font-family: "Inter", sans-serif;
+}
+
+.lightbox-exam {
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-family: "Inter", sans-serif;
+}
+
+.lightbox-exam.visible {
+    display: block;
+}
+
+.lightbox-counter {
+    font-size: 14px;
+    color: var(--muted);
+    font-family: "Inter", sans-serif;
+    white-space: nowrap;
+}
+
+/* Exam star on image */
+.work-item .exam-star {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 5;
+}
+
+.work-item .exam-star:hover::before {
+    content: "Экзамен за 1 семестр";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    margin-right: 10px;
+    color: white;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.work-item.has-exam .exam-star {
+    display: block;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .back {
+        position: absolute;
+        left: 20px;
+        top: 40px;
+        transform: none;
+    }
+
+    .page-header {
+        padding-top: 60px;
+    }
+
+    .profile-photo {
+        float: none;
+        margin: 0 auto 20px;
+        display: block;
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-intro {
+        text-align: center;
+    }
+
+    .location {
+        justify-content: center;
+        display: inline-flex;
+    }
+
+    .page h2 {
+        font-size: 36px;
+    }
+
+    .page {
+        margin: 80px auto;
+        padding: 0 15px;
+    }
+
+    .post-images {
+        grid-template-columns: 1fr;
+    }
+
+    .accordion-title {
+        font-size: 20px;
+    }
+
+    .works-section h4 {
+        font-size: 18px;
+    }
+
+    .works-title {
+        font-size: 42px;
+    }
+
+    .works-desc {
+        font-size: 14px;
+    }
+
+    .featured-work img {
+        height: 300px;
+    }
+
+    .works-accordion {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .work-item:nth-child(3n) {
+        grid-column: auto;
+    }
+}

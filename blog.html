@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Блог — Alex Delete</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="main.js" defer></script>
+    </head>
+    <body class="blog-page">
+        <div class="logo">Александр Колобов</div>
+
+        <div class="side-nav">
+            <div class="side-nav-item">
+                <a href="#post-1" class="side-nav-link">наброски и тишина</a>
+                <a href="#post-2" class="side-nav-link">новые текстуры</a>
+            </div>
+        </div>
+
+        <div class="page blog">
+            <div class="page-header">
+                <a href="index.html" class="back"></a>
+            </div>
+
+            <h1 class="blog-title">блог</h1>
+
+            <div class="blog-list">
+                <article
+                    class="post"
+                    id="post-1"
+                    data-title="наброски и тишина"
+                    data-date="12 марта 2026"
+                    data-content="
+                <p>сегодня больше смотрел, чем рисовал.</p>
+                <p>кажется это тоже часть процесса.</p>
+            "
+                >
+                    <div class="post-meta">12 марта 2026</div>
+                    <h3 class="post-title">наброски и тишина</h3>
+                    <div class="post-content">
+                        <p>сегодня больше смотрел, чем рисовал...</p>
+                    </div>
+                </article>
+
+                <article
+                    class="post"
+                    id="post-2"
+                    data-title="новые текстуры"
+                    data-date="5 марта 2026"
+                    data-content="
+                <p>пробую собирать форму через шум.</p>
+                <p>это ощущается иначе.</p>
+            "
+                >
+                    <div class="post-meta">5 марта 2026</div>
+                    <h3 class="post-title">новые текстуры</h3>
+                    <div class="post-content">
+                        <p>пробую собирать форму через шум...</p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- ОТКРЫТЫЙ ПОСТ -->
+            <div class="post-view" id="postView">
+                <a href="#" class="post-back" id="postBack"></a>
+
+                <div class="post-view-inner">
+                    <div class="post-meta" id="postMeta"></div>
+                    <h1 class="post-title" id="postTitle"></h1>
+
+                    <div class="post-content" id="postContent"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                ←
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                →
+            </button>
+            <div class="lightbox-content">
+                <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+                <div class="lightbox-caption" id="lightbox-caption">
+                    <div class="lightbox-info">
+                        <span class="lightbox-year" id="lightbox-year"></span>
+                        <span class="lightbox-exam" id="lightbox-exam"></span>
+                    </div>
+                    <span class="lightbox-counter" id="lightbox-counter"></span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

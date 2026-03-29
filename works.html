@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Александр Колобов</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="main.js" defer></script>
+    </head>
+    <body class="works-page">
+        <!-- Background Banner -->
+        <div class="bg-banner">
+            <img src="banner.png" alt="Banner" />
+        </div>
+
+        <div class="logo">Александр Колобов</div>
+
+        <div class="side-nav">
+            <div class="side-nav-item">
+                <a href="#latest" class="side-nav-link latest-link"
+                    >последняя работа</a
+                >
+            </div>
+            <div class="side-nav-item">
+                <a href="#course-2025" class="side-nav-link">2025—2026</a>
+                <a href="#painting" class="side-nav-link">Живопись</a>
+                <a href="#drawing" class="side-nav-link">Рисунок</a>
+                <a href="#design" class="side-nav-link">Дизайн</a>
+            </div>
+        </div>
+
+        <div class="page works">
+            <div class="works-content">
+                <div class="works-content-inner">
+                    <div class="page-header">
+                        <a href="index.html" class="back"></a>
+                    </div>
+
+                    <!-- HERO -->
+                    <div class="works-hero">
+                        <h1 class="works-title">Мои работы</h1>
+                        <p class="works-desc">
+                            Эволюция моего визуального языка: от академической
+                            базы к поиску собственного стиля в живописи и
+                            дизайне.
+                        </p>
+                    </div>
+
+                    <!-- LATEST WORK -->
+                    <div class="latest-work" id="latest">
+                        <div class="latest-label">Последняя работа</div>
+                        <img
+                            src=""
+                            alt="Последняя работа"
+                            id="latest-work-img"
+                        />
+                        <div class="latest-info">
+                            <span id="latest-work-title"></span>
+                            <span id="latest-work-date"></span>
+                        </div>
+                    </div>
+
+                    <!-- TIMELINE COURSES -->
+                    <div class="works-accordion">
+                        <!-- COURSE 1 -->
+                        <div class="accordion-item" id="course-2025">
+                            <button class="accordion-header">
+                                <div class="accordion-left">
+                                    <span class="accordion-icon">→</span>
+                                    <span class="accordion-title"
+                                        >2025–2026</span
+                                    >
+                                </div>
+                                <span class="accordion-count">6 работ</span>
+                            </button>
+
+                            <div class="accordion-content">
+                                <div class="course-intro">
+                                    <p>
+                                        Первый этап: изучение формы, композиции
+                                        и цвета. Поиск визуального языка и
+                                        работа с базовыми принципами.
+                                    </p>
+                                </div>
+
+                                <section class="works-section">
+                                    <h4>Живопись</h4>
+                                    <div class="gallery-carousel">
+                                        <div
+                                            class="gallery-track"
+                                            id="painting"
+                                        >
+                                            <div
+                                                class="work-item"
+                                                data-date="2026-02-11"
+                                            >
+                                                <img
+                                                    src="img3.jpg"
+                                                    alt="Живопись"
+                                                    class="lightbox-trigger"
+                                                />
+                                                <div class="work-caption">
+                                                    <span class="work-title"
+                                                        >«Натюрморт
+                                                        мастер-класса Р.Ф.
+                                                        Хузина»</span
+                                                    >
+                                                    <span class="work-year"
+                                                        >2026</span
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="work-item"
+                                                data-date="2026-02-09"
+                                            >
+                                                <img
+                                                    src="img1.jpg"
+                                                    alt="Живопись"
+                                                    class="lightbox-trigger"
+                                                />
+                                                <div class="work-caption">
+                                                    <span class="work-title"
+                                                        >«Драпировка на
+                                                        кубе»</span
+                                                    >
+                                                    <span class="work-year"
+                                                        >2026</span
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="work-item has-exam"
+                                                data-date="2025-12-24"
+                                            >
+                                                <img
+                                                    src="img2.jpg"
+                                                    alt="Живопись"
+                                                    class="lightbox-trigger"
+                                                />
+                                                <span class="exam-star">★</span>
+                                                <div class="work-caption">
+                                                    <span class="work-title"
+                                                        >«Натюрморт с
+                                                        часами»</span
+                                                    >
+                                                    <span class="work-year"
+                                                        >2025</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="gallery-dots"
+                                            data-gallery="painting"
+                                        >
+                                            <button
+                                                class="gallery-dot active"
+                                                data-slide="0"
+                                            ></button>
+                                            <button
+                                                class="gallery-dot"
+                                                data-slide="1"
+                                            ></button>
+                                            <button
+                                                class="gallery-dot"
+                                                data-slide="2"
+                                            ></button>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="works-section">
+                                    <h4>Рисунок</h4>
+                                    <div class="gallery-carousel">
+                                        <div class="gallery-track" id="drawing">
+                                            <div
+                                                class="work-item"
+                                                data-date="2026-03-24"
+                                            >
+                                                <img
+                                                    src="drawing4.jpg"
+                                                    alt="Рисунок"
+                                                    class="lightbox-trigger"
+                                                />
+                                                <div class="work-caption">
+                                                    <span class="work-title"
+                                                        >«Голова Афродиты»</span
+                                                    >
+                                                    <span class="work-year"
+                                                        >2026</span
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="work-item has-exam"
+                                                data-date="2025-12-25"
+                                            >
+                                                <img
+                                                    src="drawing3.jpg"
+                                                    alt="Рисунок"
+                                                    class="lightbox-trigger"
+                                                />
+                                                <span class="exam-star">★</span>
+                                                <div class="work-caption">
+                                                    <span class="work-title"
+                                                        >«Натюрморт в
+                                                        интерьере»</span
+                                                    >
+                                                    <span class="work-year"
+                                                        >2025</span
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="work-item"
+                                                data-date="2025-11-06"
+                                            >
+                                                <img
+                                                    src="drawing1.jpg"
+                                                    alt="Рисунок"
+                                                    class="lightbox-trigger"
+                                                />
+                                                <div class="work-caption">
+                                                    <span class="work-title"
+                                                        >«Пальмовая ветвь»</span
+                                                    >
+                                                    <span class="work-year"
+                                                        >2025</span
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="work-item"
+                                                data-date="2025-10-16"
+                                            >
+                                                <img
+                                                    src="drawing2.jpg"
+                                                    alt="Рисунок"
+                                                    class="lightbox-trigger"
+                                                />
+                                                <div class="work-caption">
+                                                    <span class="work-title"
+                                                        >«Драпировка»</span
+                                                    >
+                                                    <span class="work-year"
+                                                        >2025</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="gallery-dots"
+                                            data-gallery="drawing"
+                                        >
+                                            <button
+                                                class="gallery-dot active"
+                                                data-slide="0"
+                                            ></button>
+                                            <button
+                                                class="gallery-dot"
+                                                data-slide="1"
+                                            ></button>
+                                            <button
+                                                class="gallery-dot"
+                                                data-slide="2"
+                                            ></button>
+                                            <button
+                                                class="gallery-dot"
+                                                data-slide="3"
+                                            ></button>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="works-section">
+                                    <h4>Дизайн</h4>
+                                    <div class="gallery-carousel">
+                                        <div class="gallery-track" id="design">
+                                            <div
+                                                class="work-item"
+                                                data-date="2026-03-21"
+                                            >
+                                                <img
+                                                    src="design1.jpg"
+                                                    alt="Дизайн"
+                                                    class="lightbox-trigger"
+                                                />
+                                                <div class="work-caption">
+                                                    <span class="work-title"
+                                                        >«Название работы»</span
+                                                    >
+                                                    <span class="work-year"
+                                                        >2026</span
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="work-item"
+                                                data-date="2026-03-20"
+                                            >
+                                                <img
+                                                    src="design2.jpg"
+                                                    alt="Дизайн"
+                                                    class="lightbox-trigger"
+                                                />
+                                                <div class="work-caption">
+                                                    <span class="work-title"
+                                                        >«Название работы»</span
+                                                    >
+                                                    <span class="work-year"
+                                                        >2026</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="gallery-dots"
+                                            data-gallery="design"
+                                        >
+                                            <button
+                                                class="gallery-dot active"
+                                                data-slide="0"
+                                            ></button>
+                                            <button
+                                                class="gallery-dot"
+                                                data-slide="1"
+                                            ></button>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+
+                        <!-- COURSE 2 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <div class="accordion-left">
+                                    <span class="accordion-icon">→</span>
+                                    <span class="accordion-title"
+                                        >2026–2027</span
+                                    >
+                                </div>
+                                <span class="accordion-count">0 работ</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="empty-message">Скоро появятся</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIGHTBOX -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                ←
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                →
+            </button>
+            <div class="lightbox-content">
+                <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+                <div class="lightbox-caption" id="lightbox-caption">
+                    <div class="lightbox-info">
+                        <span class="lightbox-year" id="lightbox-year"></span>
+                        <span class="lightbox-exam" id="lightbox-exam"></span>
+                    </div>
+                    <span class="lightbox-counter" id="lightbox-counter"></span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

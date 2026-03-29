@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Обо мне — Александр Колобов</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="main.js" defer></script>
+    </head>
+    <body class="about-page">
+        <div class="logo">Александр Колобов</div>
+
+        <div class="side-nav">
+            <div class="side-nav-item">
+                <a href="#path" class="side-nav-link">Путь</a>
+            </div>
+            <div class="side-nav-item">
+                <a href="#contacts" class="side-nav-link">Контакты</a>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="page-header">
+                <a href="index.html" class="back"></a>
+            </div>
+
+            <h1 class="about-title">обо мне</h1>
+
+            <div class="about-intro">
+                <div class="profile-photo">
+                    <img src="profile.jpg" alt="Александр Колобов" />
+                </div>
+
+                <div class="about-text">
+                    <p class="about-name">Александр Колобов</p>
+
+                    <p class="about-lead">
+                        Художник и дизайнер. Исследую форму, композицию и
+                        визуальный язык через живопись, рисунок и цифровые
+                        практики.
+                    </p>
+
+                    <div class="about-meta">
+                        <span>Ярославль</span>
+                        <span>18 лет</span>
+                    </div>
+
+                    <p class="about-enrollment">
+                        С 2025 года обучаюсь на отделении дизайна в Ярославском
+                        художественном училище.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-section" id="path">
+                <h3>Путь</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2019 — 2024</span>
+                        <span class="timeline-text">
+                            Детская школа искусств №5
+                        </span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2025 — н.в.</span>
+                        <span class="timeline-text">
+                            Ярославское художественное училище
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section" id="contacts">
+                <h3>Контакты</h3>
+
+                <div class="contact">
+                    <a href="mailto:alex@delete.art" class="contact-link">
+                        alex@delete.art
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                ←
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                →
+            </button>
+            <div class="lightbox-content">
+                <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+                <div class="lightbox-caption" id="lightbox-caption">
+                    <div class="lightbox-info">
+                        <span class="lightbox-year" id="lightbox-year"></span>
+                        <span class="lightbox-exam" id="lightbox-exam"></span>
+                    </div>
+                    <span class="lightbox-counter" id="lightbox-counter"></span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

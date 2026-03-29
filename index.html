@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Александр Колобов</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+        <!-- Background Banner -->
+        <div class="bg-banner">
+            <img src="banner.png" alt="Banner" />
+        </div>
+
+        <div class="logo">Александр Колобов</div>
+
+        <button class="mobile-menu-btn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-container">
+            <div class="nav">
+                <a href="about.html">обо мне</a>
+                <a href="works.html">работы</a>
+                <a href="blog.html">блог</a>
+            </div>
+        </div>
+
+        <div class="mobile-nav">
+            <a href="about.html">обо мне</a>
+            <a href="works.html">работы</a>
+            <a href="blog.html">блог</a>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+                ←
+            </button>
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">
+                →
+            </button>
+            <div class="lightbox-content">
+                <img src="" alt="" class="lightbox-img" id="lightbox-img" />
+                <div class="lightbox-caption" id="lightbox-caption">
+                    <div class="lightbox-info">
+                        <span class="lightbox-year" id="lightbox-year"></span>
+                        <span class="lightbox-exam" id="lightbox-exam"></span>
+                    </div>
+                    <span class="lightbox-counter" id="lightbox-counter"></span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
