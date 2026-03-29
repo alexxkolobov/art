@@ -1362,11 +1362,26 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .nav {
-        display: none;
+        position: fixed;
+        left: 20px !important;
+        top: 180px !important;
+        width: auto;
+        height: auto;
+        display: block !important;
+    }
+
+    .nav a {
+        font-size: 80px !important;
+        letter-spacing: -3px !important;
+        margin-bottom: 10px !important;
     }
 
     .mobile-menu-btn {
-        display: block;
+        display: none;
+    }
+
+    .mobile-nav {
+        display: none;
     }
 
     .logo {
@@ -1418,7 +1433,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     }
 
     .about-intro {
-        text-align: center;
+        text-align: left;
     }
 
     .about-title {
