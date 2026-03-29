@@ -1453,3 +1453,134 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         cursor: auto !important;
     }
 }
+
+/* ===== ABOUT MOBILE IMPROVEMENT ===== */
+@media (max-width: 768px) {
+    /* 1. УБИРАЕМ SIDE NAV */
+    .side-nav {
+        display: none !important;
+    }
+
+    /* 2. HEADER */
+    .page-header {
+        padding-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .back {
+        position: static;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    /* 3. ЗАГОЛОВОК */
+    .about-title {
+        font-size: 36px !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 4. ГЛАВНЫЙ БЛОК */
+    .about-intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    /* 5. ФОТО */
+    .profile-photo {
+        width: 160px;
+        height: 160px;
+    }
+
+    /* 6. ТЕКСТ */
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-name {
+        font-size: 20px;
+    }
+
+    .about-lead {
+        font-size: 15px;
+    }
+
+    .about-meta {
+        justify-content: center;
+        display: flex;
+        gap: 10px;
+    }
+
+    /* 7. СЕКЦИИ */
+    .about-section {
+        margin-bottom: 30px;
+    }
+
+    .about-section h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* 8. TIMELINE */
+    .timeline-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .timeline-year {
+        min-width: auto;
+        font-size: 12px;
+    }
+
+    .timeline-text {
+        font-size: 15px;
+    }
+
+    /* 9. КОНТАКТЫ */
+    .contact-link {
+        font-size: 16px;
+    }
+}
+
+/* ===== MOBILE CLEAN NAV + LOGO + WORKS ===== */
+@media (max-width: 768px) {
+    /* 1. УБИРАЕМ АНИМАЦИИ НАВИГАЦИИ */
+    .nav a {
+        transition: none !important;
+    }
+
+    .nav a:hover {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .side-nav-link {
+        transition: none !important;
+    }
+
+    .side-nav-link:hover {
+        opacity: 1 !important;
+    }
+
+    /* 2. УВЕЛИЧИВАЕМ ЛОГО (но адаптивно) */
+    .logo {
+        font-size: 28px !important;
+        letter-spacing: -0.5px;
+    }
+
+    /* 3. УБИРАЕМ ФОН НА СТРАНИЦЕ WORKS */
+    .works-page .bg-banner {
+        display: none !important;
+    }
+
+    .works-page {
+        background: #fff;
+    }
+
+    /* 4. (БОНУС) УБИРАЕМ ВСЕ ЛИШНИЕ ХОВЕРЫ НА МОБИЛЕ */
+    a {
+        transition: none !important;
+    }
+}
