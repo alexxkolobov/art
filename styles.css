@@ -1546,28 +1546,38 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
 /* ===== MOBILE CLEAN NAV + LOGO + WORKS ===== */
 @media (max-width: 768px) {
-    /* 1. УБИРАЕМ АНИМАЦИИ НАВИГАЦИИ */
-    .nav a {
+    /* 1. УБИРАЕМ ВСЕ АНИМАЦИИ */
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .nav a,
+    .side-nav-link,
+    a,
+    .accordion-header,
+    .gallery-dot,
+    .work-item,
+    .post,
+    .logo,
+    .back {
         transition: none !important;
     }
 
-    .nav a:hover {
+    .nav a:hover,
+    .side-nav-link:hover,
+    a:hover {
         transform: none !important;
         opacity: 1 !important;
     }
 
-    .side-nav-link {
-        transition: none !important;
-    }
-
-    .side-nav-link:hover {
-        opacity: 1 !important;
-    }
-
-    /* 2. УВЕЛИЧИВАЕМ ЛОГО (но адаптивно) */
+    /* 2. ЛОГО БОЛЬШЕ */
     .logo {
-        font-size: 28px !important;
-        letter-spacing: -0.5px;
+        font-size: 36px !important;
+        letter-spacing: -1px;
+        padding: 15px 20px;
     }
 
     /* 3. УБИРАЕМ ФОН НА СТРАНИЦЕ WORKS */
@@ -1578,9 +1588,44 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     .works-page {
         background: #fff;
     }
+}
 
-    /* 4. (БОНУС) УБИРАЕМ ВСЕ ЛИШНИЕ ХОВЕРЫ НА МОБИЛЕ */
-    a {
-        transition: none !important;
+/* ===== ABOUT MOBILE LAYOUT ===== */
+@media (max-width: 768px) {
+    /* Стрелка как на странице работ */
+    .about-page .page-header {
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+        margin-bottom: 20px;
+    }
+
+    .about-page .back {
+        position: static;
+        display: inline-block;
+        margin: 0 20px 0 0;
+    }
+
+    /* Центрирование по левому краю */
+    .about-intro {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .profile-photo {
+        margin: 0 0 20px 0;
+    }
+
+    .about-meta {
+        justify-content: flex-start;
+        display: flex;
+        gap: 10px;
+    }
+
+    .about-title {
+        text-align: left;
     }
 }
