@@ -1360,166 +1360,58 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 }
 
 /* ===== RESPONSIVE ===== */
+/* ===== MOBILE FIX (REAL UX) ===== */
 @media (max-width: 768px) {
-    .nav {
-        position: fixed;
-        left: 20px !important;
-        top: 180px !important;
-        width: auto;
-        height: auto;
-        display: block !important;
-    }
-
-    .nav a {
-        font-size: 80px !important;
-        letter-spacing: -3px !important;
-        margin-bottom: 10px !important;
-    }
-
-    .mobile-menu-btn {
-        display: none;
-    }
-
-    .mobile-nav {
-        display: none;
-    }
-
+    /* 1. УБИРАЕМ ЛОМАНЫЙ FIXED */
+    .nav,
     .logo {
-        position: fixed;
-        left: 20px !important;
-        top: 20px !important;
-        font-size: 24px !important;
+        position: static !important;
+        transform: none !important;
     }
 
-    .side-nav {
+    /* 2. НОРМАЛЬНЫЙ HEADER */
+    .logo {
+        font-size: 20px !important;
+        padding: 20px;
+    }
+
+    /* 3. СКРЫВАЕМ ДЕСКТОП МЕНЮ */
+    .nav {
         display: none !important;
     }
 
-    .back {
-        position: absolute;
-        left: 20px;
-        top: 80px;
-        transform: none;
+    /* 4. ВКЛЮЧАЕМ БУРГЕР */
+    .mobile-menu-btn {
+        display: block !important;
+        position: fixed;
+        top: 20px;
+        right: 20px;
     }
 
-    .page-header {
-        padding-top: 60px;
-    }
-
-    .bg-banner {
-        right: 0;
-        width: 80vw;
-        height: 60vh;
-    }
-
-    .works-page .bg-banner {
-        z-index: -1;
-    }
-
-    .works-content {
-        padding: 0 20px;
-    }
-
-    .works-content-inner {
-        padding: 20px 0;
-    }
-
-    .profile-photo {
-        float: none;
-        margin: 0 auto 20px;
-        display: block;
-        width: 200px;
-        height: 200px;
-    }
-
-    .about-intro {
-        text-align: left;
-    }
-
-    .about-title {
-        font-size: 60px !important;
-        margin-bottom: 20px !important;
-    }
-
-    .about-name {
-        font-size: 24px !important;
-    }
-
-    .about-lead {
-        font-size: 16px !important;
-    }
-
-    .location {
+    /* 5. МОБИЛЬНОЕ МЕНЮ */
+    .mobile-nav {
+        display: none;
+        flex-direction: column;
         justify-content: center;
-        display: inline-flex;
+        align-items: center;
     }
 
+    .mobile-nav.active {
+        display: flex;
+    }
+
+    .mobile-nav a {
+        font-size: 32px;
+    }
+
+    /* 6. УБИРАЕМ ФОН */
+    .bg-banner {
+        display: none;
+    }
+
+    /* 7. ТИПОГРАФИКА */
     .page h2 {
-        font-size: 36px;
-    }
-
-    .page {
-        margin: 80px auto;
-        padding: 0 15px;
-    }
-
-    .blog-title {
-        font-size: 60px !important;
-    }
-
-    .post-title {
-        font-size: 24px !important;
-    }
-
-    .post-images {
-        grid-template-columns: 1fr;
-    }
-
-    .accordion-title {
-        font-size: 18px;
-    }
-
-    .works-title {
-        font-size: 42px;
-    }
-
-    .works-desc {
-        font-size: 14px;
-    }
-
-    .featured-work img {
-        height: 300px;
-    }
-
-    .works-accordion {
-        border-left: none;
-        padding-left: 0;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .work-item:nth-child(3n) {
-        grid-column: auto;
-    }
-
-    .gallery-track .work-item {
-        min-width: 100%;
-    }
-
-    .latest-work {
-        max-width: 100%;
-    }
-
-    .lightbox-img {
-        max-height: 80vh;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 20px !important;
+        font-size: 32px !important;
     }
 
     .about-title,
@@ -1528,10 +1420,36 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     }
 
     .works-title {
-        font-size: 32px;
+        font-size: 28px !important;
     }
 
+    .page p {
+        font-size: 16px;
+    }
+
+    /* 8. ОТСТУПЫ */
     .page {
-        margin: 60px auto;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    /* 9. ABOUT FIX */
+    .about-intro {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    /* 10. GRID */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 11. КУРСОР OFF */
+    html * {
+        cursor: auto !important;
     }
 }
