@@ -5,50 +5,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: "Druzhok";
-    src: url("DRUZHOK.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Doppelganger";
-    src: url("Doppelganger_RUS.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Nyght Serif";
-    src: url("NyghtSerif-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Nyght Serif";
-    src: url("NyghtSerif-Bold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Evolventa";
-    src: url("Evolventa-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Evolventa";
-    src: url("Evolventa-Oblique.ttf") format("truetype");
-    font-weight: normal;
-    font-style: italic;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
-
 :root {
     --bg: #ffffff;
     --text: #111111;
@@ -84,6 +40,7 @@ body {
     height: 80vh;
     z-index: -2;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .bg-banner img {
@@ -126,6 +83,7 @@ body > * {
     font-weight: 400;
     opacity: 0.5;
     transition: transform 0.1s ease-out;
+    z-index: 1000 !important;
 }
 
 /* ===== SIDE NAV ===== */
@@ -136,7 +94,7 @@ body > * {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    z-index: 10;
+    z-index: 1000 !important;
     transition: transform 0.1s ease-out;
 }
 
@@ -147,7 +105,7 @@ body > * {
 }
 
 .side-nav-label {
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -155,7 +113,7 @@ body > * {
 }
 
 .side-nav-link {
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 14px;
     color: #333;
     text-decoration: none;
@@ -169,7 +127,7 @@ body > * {
 
 /* стиль для ссылки "последняя работа" */
 .latest-link {
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -264,7 +222,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     width: 100%;
     height: 100vh;
     background: #fff;
-    z-index: 99;
+    z-index: 1000;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -276,7 +234,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 }
 
 .mobile-nav a {
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 48px;
     font-weight: 400;
     color: var(--text);
@@ -286,17 +244,30 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 }
 
 /* ===== BACK LINK ===== */
+.page-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+.page-title-row .about-title,
+.page-title-row .works-title,
+.page-title-row .blog-title {
+    margin: 0;
+}
+
 .back {
-    position: absolute;
-    left: -55px;
-    top: 8px;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
+    position: static;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     opacity: 0.5;
     transition: opacity 0.2s;
-    text-decoration: none;
-    line-height: 1;
 }
 
 .back:hover {
@@ -305,21 +276,9 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
 .back::before {
     content: "←";
-    font-size: 32px;
-    color: var(--text);
-}
-
-/* центрирование стрелки на странице работ */
-.works .page-header {
-    display: flex;
-    align-items: center;
-}
-
-.works .page-header .back {
-    position: relative;
-    left: auto;
-    top: auto;
-    margin: 0 20px 0 0;
+    font-size: 28px;
+    color: #000;
+    line-height: 1;
 }
 
 /* ===== PAGE LAYOUT ===== */
@@ -355,11 +314,6 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
 .works-content > :last-child {
     margin-bottom: 0;
-}
-
-.page-header {
-    position: relative;
-    margin-bottom: 30px;
 }
 
 .page h2 {
@@ -455,7 +409,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 }
 
 .accordion-title {
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 24px;
     font-weight: 400;
     text-transform: none;
@@ -657,7 +611,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
 .about-name {
     font-size: 32px;
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     margin-bottom: 10px;
 }
 
@@ -811,6 +765,17 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     letter-spacing: 2px;
     color: #999;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-date {
+    color: #999;
+}
+
+.post-location {
+    color: #777;
 }
 
 /* заголовок поста */
@@ -828,19 +793,81 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     max-width: 500px;
 }
 
+/* фотографии в посте */
+.post-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.post-images img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
 /* ===== ОТКРЫТЫЙ ПОСТ ===== */
 .post-view {
     background: #fff;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: none;
+    overflow-y: auto;
+}
+
+.post-view.active {
+    display: block;
 }
 
 .post-view-inner {
     max-width: 640px;
+    margin: 0 auto;
+    padding: 120px 20px 60px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.post-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.post-back {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.post-back:hover {
+    opacity: 1;
+}
+
+.post-back::before {
+    content: "←";
+    font-size: 24px;
+    color: #000;
+    line-height: 1;
 }
 
 .post-view .post-title {
+    font-family: "Thaloria", sans-serif !important;
     font-size: 64px;
+    font-weight: 400 !important;
     line-height: 1.1;
-    margin-bottom: 30px;
+    margin: 0;
+    flex: 1;
+    min-width: 0;
 }
 
 .post-view .post-content p {
@@ -860,7 +887,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     position: fixed;
     inset: 0;
     background: #fff;
-    z-index: 1000;
+    z-index: 50;
     display: none;
     overflow-y: auto;
 }
@@ -869,35 +896,12 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     display: block;
 }
 
-.post-view.active .back {
-    display: none;
-}
-
-/* назад */
-.post-back {
-    position: absolute;
-    left: 20px;
-    top: 40px;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    opacity: 0.5;
-    transition: opacity 0.2s;
-    text-decoration: none;
-    line-height: 1;
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-.post-back:hover {
-    opacity: 1;
-}
-
-.post-back::before {
-    content: "←";
-    font-size: 32px;
-    color: var(--text);
+.post-view-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 120px 20px 60px;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 /* ===== GALLERY (WORKS) ===== */
@@ -918,7 +922,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 }
 
 .works-subtitle {
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -936,7 +940,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 }
 
 .works-desc {
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 16px;
     line-height: 1.6;
     max-width: 500px;
@@ -952,7 +956,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 }
 
 .latest-label {
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -971,7 +975,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     display: flex;
     gap: 15px;
     margin-top: 10px;
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 14px;
     color: var(--muted);
     justify-content: space-between;
@@ -989,7 +993,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 }
 
 .course-intro p {
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: #777;
@@ -1009,7 +1013,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 }
 
 .carousel-tab {
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
     padding: 10px 20px;
@@ -1299,14 +1303,14 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     font-size: 16px;
     font-weight: 500;
     color: #111;
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     line-height: 1.4;
 }
 
 .lightbox-semester {
     font-size: 13px;
     color: var(--muted);
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
 }
 
 .lightbox-exam {
@@ -1316,7 +1320,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     padding: 6px 12px;
     font-size: 12px;
     border-radius: 4px;
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
 }
 
 .lightbox-exam.visible {
@@ -1326,7 +1330,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 .lightbox-counter {
     font-size: 14px;
     color: var(--muted);
-    font-family: "Inter", sans-serif;
+    font-family: "Helvetica", "Arial", sans-serif;
     white-space: nowrap;
 }
 
@@ -1363,16 +1367,21 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 /* ===== MOBILE FIX (REAL UX) ===== */
 @media (max-width: 768px) {
     /* 1. УБИРАЕМ ЛОМАНЫЙ FIXED */
-    .nav,
-    .logo {
+    .nav {
         position: static !important;
         transform: none !important;
     }
 
     /* 2. НОРМАЛЬНЫЙ HEADER */
     .logo {
-        font-size: 20px !important;
-        padding: 20px;
+        font-size: 36px !important;
+        letter-spacing: 2px !important;
+        word-spacing: 8px !important;
+        padding: 15px 20px;
+        position: fixed !important;
+        top: 20px !important;
+        left: 20px !important;
+        z-index: 101 !important;
     }
 
     /* 3. СКРЫВАЕМ ДЕСКТОП МЕНЮ */
@@ -1416,7 +1425,9 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
     .about-title,
     .blog-title {
-        font-size: 42px !important;
+        font-size: 64px !important;
+        letter-spacing: -1px !important;
+        word-spacing: 10px !important;
     }
 
     .works-title {
@@ -1462,21 +1473,24 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     }
 
     /* 2. HEADER */
-    .page-header {
-        padding-top: 20px;
-        margin-bottom: 10px;
+    .page-title-row {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 20px;
     }
 
-    .back {
-        position: static;
-        display: inline-block;
-        margin-bottom: 10px;
+    .page-title-row h1 {
+        margin: 0 !important;
     }
 
-    /* 3. ЗАГОЛОВОК */
-    .about-title {
-        font-size: 36px !important;
-        margin-bottom: 20px !important;
+    /* Одинаковый размер заголовков на мобильных */
+    .about-title,
+    .blog-title,
+    .works-title {
+        font-size: 64px !important;
+        letter-spacing: -1px !important;
+        word-spacing: 10px !important;
+        margin: 0 !important;
     }
 
     /* 4. ГЛАВНЫЙ БЛОК */
@@ -1575,9 +1589,25 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
     /* 2. ЛОГО БОЛЬШЕ */
     .logo {
-        font-size: 36px !important;
-        letter-spacing: -1px;
-        padding: 15px 20px;
+        position: fixed !important;
+        top: 20px !important;
+        left: 20px !important;
+        transform: none !important;
+        z-index: 2000 !important;
+        font-size: clamp(24px, 6vw, 40px) !important;
+        white-space: nowrap !important;
+        background: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        backdrop-filter: none !important;
+    }
+
+    /* Отступ сверху чтобы контент не прятался под логотипом */
+    .page,
+    .works-content,
+    .blog,
+    .about-page {
+        padding-top: 80px !important;
     }
 
     /* 3. НА INDEX ОСТАВЛЯЕМ НАВИГАЦИЮ И ФОН */
@@ -1586,11 +1616,14 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         position: fixed !important;
         left: 20px !important;
         top: 180px !important;
+        z-index: 1000 !important;
     }
 
     body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner {
         display: block !important;
-        right: 0 !important;
+        right: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(-50%) !important;
         width: 100vw !important;
         height: 100vh !important;
     }
@@ -1598,6 +1631,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner img {
         opacity: 0.3 !important;
         filter: grayscale(100%) brightness(0.8) !important;
+        object-fit: contain !important;
     }
 
     body:not(.works-page):not(.about-page):not(.blog-page) .mobile-menu-btn {
@@ -1620,24 +1654,11 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
 /* ===== ABOUT MOBILE LAYOUT ===== */
 @media (max-width: 768px) {
-    /* Стрелка как на странице работ */
-    .about-page .page-header {
-        display: flex;
-        align-items: center;
-        padding-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .about-page .back {
-        position: static;
-        display: inline-block;
-        margin: 0 20px 0 0;
-    }
-
     /* Заголовок больше и интервал */
     .about-title {
         font-size: 64px !important;
-        letter-spacing: -3px !important;
+        letter-spacing: -1px !important;
+        word-spacing: 10px !important;
         margin-bottom: 30px !important;
         text-align: left;
     }
@@ -1691,11 +1712,6 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         padding: 20px 0 !important;
     }
 
-    .works-title {
-        font-size: 64px !important;
-        letter-spacing: -3px !important;
-    }
-
     /* Работы побольше */
     .grid .work-item {
         min-width: calc(50% - 10px) !important;
@@ -1708,6 +1724,29 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     /* Lightbox стрелки белые */
     .lightbox-nav {
         display: none !important;
+    }
+
+    .post-back {
+        display: block !important;
+        position: absolute !important;
+        top: auto !important;
+        left: 0 !important;
+        right: auto !important;
+        z-index: 1001 !important;
+    }
+
+    .post-view-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #postMeta {
+        margin-bottom: 10px;
+    }
+
+    #postTitle {
+        margin-bottom: 30px;
     }
 
     .lightbox-close {
@@ -1725,10 +1764,76 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     .lightbox-caption {
         background: rgba(255, 255, 255, 0.9) !important;
         color: #000 !important;
+        font-family: "Helvetica", "Arial", sans-serif !important;
     }
 
-    .lightbox-year,
+    .lightbox-year {
+        color: #000 !important;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+    }
+
     .lightbox-exam {
         color: #000 !important;
+        font-size: 14px !important;
+        font-style: italic !important;
+    }
+
+    /* Открытый пост - мобильные стили */
+    .post-view-inner {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .post-title-row {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px;
+        padding-left: 0 !important;
+    }
+
+    .post-back {
+        flex-shrink: 0;
+        width: 24px;
+        height: 1em !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        position: static !important;
+    }
+
+    .post-back::before {
+        content: "←";
+        font-size: 1em !important;
+        line-height: 1 !important;
+    }
+
+    .post-view .post-title {
+        margin: 0 !important;
+        flex: 1;
+        min-width: 0;
+        font-size: 32px !important;
+        line-height: 1 !important;
+        text-align: justify !important;
+    }
+
+    /* ===== ЕДИНАЯ СИСТЕМА ОТСТУПОВ ===== */
+    .page,
+    .works-content {
+        padding-top: 110px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .page-title-row h1 {
+        margin: 0 !important;
+    }
+
+    .about-title,
+    .blog-title,
+    .works-title {
+        margin: 0 !important;
     }
 }

@@ -357,29 +357,61 @@ document.addEventListener("DOMContentLoaded", function () {
   const postTitle = document.getElementById("postTitle");
   const postMeta = document.getElementById("postMeta");
   const postContent = document.getElementById("postContent");
-  const postBack = document.getElementById("postBack");
+  const pageBack = document.querySelector(".page-title-row .back");
+  const postBack = document.querySelector(".post-back");
 
   if (posts.length > 0 && postView) {
     posts.forEach(function (post) {
       post.addEventListener("click", function () {
         const title = post.dataset.title;
         const date = post.dataset.date;
+        const location = post.dataset.location || "";
         const content = post.dataset.content;
 
         postTitle.textContent = title;
-        postMeta.textContent = date;
+
+        // Формируем мета-информацию с местоположением
+        let metaHtml = `<span class="post-date">${date}</span>`;
+        if (location) {
+          metaHtml += `<span class="post-location">📍 ${location}</span>`;
+        }
+        postMeta.innerHTML = metaHtml;
+
         postContent.innerHTML = content;
+
+        // Копируем фотографии из поста
+        const postImages = post.querySelector(".post-images");
+        const existingImages = postContent.querySelector(".post-images");
+        if (existingImages) {
+          existingImages.remove();
+        }
+        if (postImages) {
+          const imagesClone = postImages.cloneNode(true);
+          postContent.appendChild(imagesClone);
+        }
 
         postView.classList.add("active");
         document.body.style.overflow = "hidden";
       });
     });
 
-    if (postBack) {
+    // Обработчик для стрелки в открытом посте
+    if (postBack && postView) {
       postBack.addEventListener("click", function (e) {
         e.preventDefault();
         postView.classList.remove("active");
         document.body.style.overflow = "";
+      });
+    }
+
+    // Обработчик для стрелки на странице блога
+    if (pageBack && postView) {
+      pageBack.addEventListener("click", function (e) {
+        if (postView.classList.contains("active")) {
+          e.preventDefault();
+          postView.classList.remove("active");
+          document.body.style.overflow = "";
+        }
       });
     }
   }

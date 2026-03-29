@@ -18,58 +18,49 @@
         </div>
 
         <div class="page blog">
-            <div class="page-header">
+            <div class="page-title-row">
                 <a href="index.html" class="back"></a>
+                <h1 class="blog-title">блог</h1>
             </div>
-
-            <h1 class="blog-title">блог</h1>
 
             <div class="blog-list">
                 <article
                     class="post"
                     id="post-1"
-                    data-title="наброски и тишина"
-                    data-date="12 марта 2026"
-                    data-content="
-                <p>сегодня больше смотрел, чем рисовал.</p>
-                <p>кажется это тоже часть процесса.</p>
-            "
+                    data-title="Сходили на пленэр всей группой"
+                    data-date="25.03.26"
+                    data-location="Дмитриевский сквер"
+                    data-content='
+                        <p>Сегодня наша группа 13 "Д" выбралась на пленэр в Дмитриевский сквер. Погода порадовала — было тепло и солнечно, идеальные условия для рисования с натуры.</p>
+                        <p>Рисовали архитектуру, деревья, людей. Каждый нашёл свой ракурс и сюжет.</p>
+                    '
                 >
-                    <div class="post-meta">12 марта 2026</div>
-                    <h3 class="post-title">наброски и тишина</h3>
-                    <div class="post-content">
-                        <p>сегодня больше смотрел, чем рисовал...</p>
+                    <div class="post-meta">
+                        <span class="post-date">25.03.26</span>
+                        <span class="post-location">📍 Дмитриевский сквер</span>
                     </div>
-                </article>
-
-                <article
-                    class="post"
-                    id="post-2"
-                    data-title="новые текстуры"
-                    data-date="5 марта 2026"
-                    data-content="
-                <p>пробую собирать форму через шум.</p>
-                <p>это ощущается иначе.</p>
-            "
-                >
-                    <div class="post-meta">5 марта 2026</div>
-                    <h3 class="post-title">новые текстуры</h3>
+                    <h3 class="post-title">Сходили на пленэр всей группой</h3>
                     <div class="post-content">
-                        <p>пробую собирать форму через шум...</p>
+                        <p>Сегодня наша группа 13 "Д" выбралась на пленэр...</p>
+                    </div>
+                    <div class="post-images">
+                        <img src="photo1.jpg" alt="Пленэр" />
+                        <img src="photo2.jpg" alt="Пленэр" />
                     </div>
                 </article>
             </div>
+        </div>
 
-            <!-- ОТКРЫТЫЙ ПОСТ -->
-            <div class="post-view" id="postView">
-                <a href="#" class="post-back" id="postBack"></a>
-
-                <div class="post-view-inner">
-                    <div class="post-meta" id="postMeta"></div>
+        <!-- ОТКРЫТЫЙ ПОСТ -->
+        <div class="post-view" id="postView">
+            <div class="post-view-inner">
+                <div class="post-title-row">
+                    <a href="#" class="post-back"></a>
                     <h1 class="post-title" id="postTitle"></h1>
-
-                    <div class="post-content" id="postContent"></div>
                 </div>
+
+                <div class="post-meta" id="postMeta"></div>
+                <div class="post-content" id="postContent"></div>
             </div>
         </div>
 
