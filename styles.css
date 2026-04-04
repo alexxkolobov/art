@@ -140,6 +140,34 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 }
 
 /* ===== NAV (HOME PAGE) ===== */
+.hero {
+    position: relative;
+}
+
+.container {
+    position: relative;
+}
+
+.hero .bg-banner {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55vw;
+    height: 80vh;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero .bg-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) contrast(110%) brightness(0.9);
+    opacity: 0.75;
+}
+
 .nav-container {
     font-family: "Thaloria", sans-serif !important;
 }
@@ -1620,22 +1648,73 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         padding-top: 0 !important;
     }
 
-    /* 3. НА INDEX - НАВИГАЦИЯ */
-    body:not(.works-page):not(.about-page):not(.blog-page) .nav {
+    /* 3. НА INDEX - КОНТЕЙНЕР */
+    body:not(.works-page):not(.about-page):not(.blog-page) .container {
+        width: 100%;
+        max-width: 500px;
+        margin: 40px auto 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    body:not(.works-page):not(.about-page):not(.blog-page) .hero {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner {
         display: block !important;
+        position: relative !important;
+        inset: auto !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+        z-index: 0 !important;
+        pointer-events: none !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: none !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        opacity: 0.15 !important;
+        filter: grayscale(100%) brightness(0.8) !important;
+    }
+
+    body:not(.works-page):not(.about-page):not(.blog-page) .nav-container {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        z-index: 1 !important;
+    }
+
+    body:not(.works-page):not(.about-page):not(.blog-page) .nav {
+        display: flex !important;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
         position: static !important;
         left: auto !important;
         top: auto !important;
         width: auto !important;
         height: auto !important;
         z-index: auto !important;
-        margin: 100px 0 20px 0 !important;
+        margin: 0 !important;
     }
 
     body:not(.works-page):not(.about-page):not(.blog-page) .nav a {
         font-size: 160px !important;
         letter-spacing: -5px !important;
-        margin-bottom: 20px !important;
+        margin-bottom: 0 !important;
     }
 
     body:not(.works-page):not(.about-page):not(.blog-page) .mobile-menu-btn {
@@ -1644,28 +1723,6 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
     body:not(.works-page):not(.about-page):not(.blog-page) .mobile-nav {
         display: none !important;
-    }
-
-    body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner {
-        display: block !important;
-        position: fixed !important;
-        top: 35% !important;
-        left: 50% !important;
-        right: auto !important;
-        transform: translate(-50%, -50%) !important;
-        z-index: -1 !important;
-        pointer-events: none !important;
-        width: 100vw !important;
-        height: auto !important;
-    }
-
-    body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner img {
-        opacity: 0.3 !important;
-        filter: grayscale(100%) brightness(0.8) !important;
-        width: 100vw !important;
-        max-width: none !important;
-        height: auto !important;
-        object-fit: contain !important;
     }
 
     /* 4. УБИРАЕМ ФОН НА СТРАНИЦЕ WORKS */
