@@ -1629,7 +1629,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         width: auto !important;
         height: auto !important;
         z-index: auto !important;
-        margin: 0 0 20px 0 !important;
+        margin: 100px 0 20px 0 !important;
     }
 
     body:not(.works-page):not(.about-page):not(.blog-page) .nav a {
@@ -1649,7 +1649,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner {
         display: block !important;
         position: fixed !important;
-        top: 45% !important;
+        top: 35% !important;
         left: 50% !important;
         right: auto !important;
         transform: translate(-50%, -50%) !important;
