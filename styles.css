@@ -142,6 +142,8 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 /* ===== NAV (HOME PAGE) ===== */
 .hero {
     position: relative;
+    min-height: auto;
+    height: auto;
 }
 
 .container {
@@ -1652,7 +1654,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     body:not(.works-page):not(.about-page):not(.blog-page) .container {
         width: 100%;
         max-width: 500px;
-        margin: 40px auto 0;
+        margin: 80px auto 0;
         padding: 0 20px;
         box-sizing: border-box;
     }
@@ -1660,7 +1662,10 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
     body:not(.works-page):not(.about-page):not(.blog-page) .hero {
         position: relative;
         width: 100%;
+        min-height: auto;
         height: auto;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 
     body:not(.works-page):not(.about-page):not(.blog-page) .bg-banner {
@@ -1706,7 +1711,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         position: static !important;
         left: auto !important;
         top: auto !important;
-        width: 100% !important;
+        width: auto !important;
         height: auto !important;
         z-index: auto !important;
         margin: 0 !important;
@@ -1714,7 +1719,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
 
     body:not(.works-page):not(.about-page):not(.blog-page) .nav a {
         display: block;
-        width: 100%;
+        width: auto;
         text-align: left;
         font-size: 160px !important;
         letter-spacing: -5px !important;
