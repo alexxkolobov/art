@@ -1653,8 +1653,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         width: 100%;
         max-width: 500px;
         margin: 40px auto 0;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 0 20px;
         box-sizing: border-box;
     }
 
@@ -1694,6 +1693,7 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        width: 100%;
         z-index: 1 !important;
     }
 
@@ -1701,17 +1701,21 @@ body:not(.works-page):not(.about-page):not(.blog-page) .side-nav {
         display: flex !important;
         flex-direction: column;
         gap: 20px;
-        align-items: center;
+        align-items: flex-start;
+        text-align: left;
         position: static !important;
         left: auto !important;
         top: auto !important;
-        width: auto !important;
+        width: 100% !important;
         height: auto !important;
         z-index: auto !important;
         margin: 0 !important;
     }
 
     body:not(.works-page):not(.about-page):not(.blog-page) .nav a {
+        display: block;
+        width: 100%;
+        text-align: left;
         font-size: 160px !important;
         letter-spacing: -5px !important;
         margin-bottom: 0 !important;
